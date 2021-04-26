@@ -31,33 +31,47 @@ function loadLista() {
 }
 function mostrarLista() {
 
-	//	var i;
-	let stats="";
+
+	let stats = "";
 	let textJson = ajax.responseText;
-	let types="type: ";
-	//var table = "<tr><th>Portada</th><th>Título</th><th>Artista</th><th>Álbum</th><th>Fecha lanzamiento</th><th>Duración</th></tr>";
+	let types = "type: ";
+	let abilidades = "<summary>Abilities</summary>";
+
+
 	let obj = JSON.parse(textJson);
-	
+
 	salida = "<img width = '300px' src=" + obj.sprites.front_default + ">";
 	document.getElementById("foto").innerHTML = salida;
 	nombre = "<h4>" + obj.name.toUpperCase() + "</h4>";
 	document.getElementById("nombre").innerHTML = nombre;
+
 	obj.stats.forEach(element => {
 
-		console.log(element.stat.name+": "+element.base_stat);
-		stats+="<p>"+element.stat.name+": "+element.base_stat+"</p>";
-		
-		
+		console.log(element.stat.name + ": " + element.base_stat);
+		stats += "<p>" + element.stat.name + ": " + element.base_stat + "</p>";
+
+
 	});
 	obj.types.forEach(element => {
 
-		console.log(element.type.name);
-		types+="<p>- "+element.type.name+"</p>";
-		
-		
+		//console.log(element.type.name);
+		types += "<p>- " + element.type.name + "</p>";
+
+
 	});
+	obj.abilities.forEach(element => {
+		console.log(element.ability.name)
+		abilidades += "<p> - " + element.ability.name + "<p>";
+
+	});
+	console.log(document.getElementById("abilities"));
+
+	document.getElementById("abilities").innerHTML = abilidades;
 	document.getElementById("stats").innerHTML = stats;
 	document.getElementById("types").innerHTML = types;
 
 
+}
+function funcionToggle() {
+	console.log("hola")
 }

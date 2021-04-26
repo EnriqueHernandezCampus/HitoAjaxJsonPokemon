@@ -3,6 +3,10 @@ body {
     font-smooth: never;
     -webkit-font-smoothing: none;
     font-family: "pokemon-font", monospace;
+    background-image: url(images/pokemon.png);
+  }
+  #foto{
+    position: absolute;
   }
   h1 {
     font-size: 40px;
@@ -11,6 +15,7 @@ body {
 .card-body{
   background-image: linear-gradient(rgb(226, 57, 57), rgb(255, 196, 0));
   padding: 15px;
+  border-radius: 15px;
 }
 
 #todo, .contenido,.carta{
