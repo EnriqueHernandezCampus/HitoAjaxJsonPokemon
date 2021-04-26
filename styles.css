@@ -1,0 +1,13 @@
+body {
+    font-size: 15px;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+    font-family: "pokemon-font", monospace;
+  }
+  h1 {
+    font-size: 40px;
+  }
+.contenido{
+    text-align: center;
+   
+}
