@@ -32,23 +32,20 @@ function loadLista() {
 function mostrarLista() {
 
 	//	var i;
+	let stats="";
 	let textJson = ajax.responseText;
+	let types="type: ";
 	//var table = "<tr><th>Portada</th><th>Título</th><th>Artista</th><th>Álbum</th><th>Fecha lanzamiento</th><th>Duración</th></tr>";
 	let obj = JSON.parse(textJson);
-	console.log(obj)
-	console.log(obj.name)
-	console.log(obj.stats);
-	console.log("jajaj" + obj.hp);
-	salida = "<p>" + obj.name + "</p><br><img width = '300px' src=" + obj.sprites.front_default + ">";
-	document.getElementById("demo").innerHTML = salida;
-	nombre = "<h4>" + obj.name + "</h4>";
+	
+	salida = "<img width = '300px' src=" + obj.sprites.front_default + ">";
+	document.getElementById("foto").innerHTML = salida;
+	nombre = "<h4>" + obj.name.toUpperCase() + "</h4>";
 	document.getElementById("nombre").innerHTML = nombre;
-	let stats="";
-	let types="type: ";
 	obj.stats.forEach(element => {
 
-		console.log(element.stat.name+" "+element.base_stat);
-		stats+="<p>"+element.stat.name+" "+element.base_stat+"</p>";
+		console.log(element.stat.name+": "+element.base_stat);
+		stats+="<p>"+element.stat.name+": "+element.base_stat+"</p>";
 		
 		
 	});
