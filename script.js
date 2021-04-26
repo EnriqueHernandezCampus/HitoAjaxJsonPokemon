@@ -72,6 +72,3 @@ function mostrarLista() {
 
 
 }
-function funcionToggle() {
-	console.log("hola")
-}
