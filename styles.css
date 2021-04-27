@@ -6,22 +6,38 @@ body {
     background-image: url(images/pokemon.png);
   }
   #foto{
-    position: absolute;
+   position: relative;
   }
   h1 {
     font-size: 40px;
   }
-
-.card-body{
+#todo{
+  width: 100%;
+}
+.card-body, #extendido{
   background-image: linear-gradient(rgb(226, 57, 57), rgb(255, 196, 0));
   padding: 15px;
   border-radius: 15px;
 }
 
-#todo, .contenido,.carta{
-  display: inline-block;
+#todo, .contenido, .carta{
+  display: inline-block
 }
 .carta{
   width: 400px;
   
+}
+button{
+  font-size: 15px;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+    font-family: "pokemon-font", monospace;
+}
+#extendido {
+
+  width: 400px;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
 }

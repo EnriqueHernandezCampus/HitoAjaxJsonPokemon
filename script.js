@@ -31,33 +31,27 @@ function loadLista() {
 }
 function mostrarLista() {
 
-
 	let stats = "";
 	let textJson = ajax.responseText;
 	let types = "type: ";
 	let abilidades = "<summary>Abilities</summary>";
-
-
 	let obj = JSON.parse(textJson);
+
 
 	salida = "<img width = '300px' src=" + obj.sprites.front_default + ">";
 	document.getElementById("foto").innerHTML = salida;
-	nombre = "<h4>" + obj.name.toUpperCase() + "</h4>";
+	nombre = "<h4>" + obj.name.toUpperCase() + " " + obj.base_experience + "xp</h4>";
 	document.getElementById("nombre").innerHTML = nombre;
 
 	obj.stats.forEach(element => {
 
 		console.log(element.stat.name + ": " + element.base_stat);
 		stats += "<p>" + element.stat.name + ": " + element.base_stat + "</p>";
-
-
 	});
 	obj.types.forEach(element => {
 
 		//console.log(element.type.name);
 		types += "<p>- " + element.type.name + "</p>";
-
-
 	});
 	obj.abilities.forEach(element => {
 		console.log(element.ability.name)
@@ -71,4 +65,13 @@ function mostrarLista() {
 	document.getElementById("types").innerHTML = types;
 
 
+}
+function funcionPrueba() {
+	console.log("toggle details");
+	var x = document.getElementById("extendido");
+	if (x.style.display === "none") {
+		x.style.display = "inline-block";
+	} else {
+		x.style.display = "none";
+	}
 }
