@@ -34,11 +34,16 @@ function mostrarLista() {
 	let stats = "";
 	let textJson = ajax.responseText;
 	let types = "type: ";
-	let abilidades = "<summary>Abilities</summary>";
+	let abilidades = "<summary>Abilities</summary><p>";
 	let obj = JSON.parse(textJson);
 
+	console.log(obj.sprites.other.dream_world);
+	if (document.getElementById("pokemon").value < 650) {
 
-	salida = "<img width = '300px' src=" + obj.sprites.front_default + ">";
+		salida = "<img width = '300px' src=" + obj.sprites.other.dream_world.front_default + ">";
+	}else{
+		salida = "<img width = '300px' src=" + obj.sprites.front_default + ">";
+	}
 	document.getElementById("foto").innerHTML = salida;
 	nombre = "<h4>" + obj.name.toUpperCase() + " " + obj.base_experience + "xp</h4>";
 	document.getElementById("nombre").innerHTML = nombre;
@@ -51,22 +56,37 @@ function mostrarLista() {
 	obj.types.forEach(element => {
 
 		//console.log(element.type.name);
-		types += "<p>- " + element.type.name + "</p>";
+		types += "<a href=" + element.type.url + ">" + element.type.name + " </a> ";
+		//types += "<a href=www.google.com>"  + element.type.name + " </a>";
 	});
 	obj.abilities.forEach(element => {
 		console.log(element.ability.name)
-		abilidades += "<p> - " + element.ability.name + "<p>";
+		abilidades += element.ability.name + " ";
 
 	});
-	console.log(document.getElementById("abilities"));
+	/*obj.types.forEach(element => {
+		botones += "<button src =" + element.type.url + ">" + element.type.name + "</button>";
+		console.log(element.type.url);
 
-	document.getElementById("abilities").innerHTML = abilidades;
+	});
+*/	console.log(document.getElementById("abilities"));
+
+	document.getElementById("abilities").innerHTML = abilidades + "</p>";
 	document.getElementById("stats").innerHTML = stats;
 	document.getElementById("types").innerHTML = types;
+	//document.getElementById("buttons").innerHTML = botones;
 
 
 }
 function funcionPrueba() {
+
+	/*obj.types.forEach(element => {
+		botones+="<button>"+element.type.name+"</button>"
+		console.log(element.type.url);
+		
+	});*/
+	//ajax.open("GET", obj.types.);
+	//ajax.send();
 	console.log("toggle details");
 	var x = document.getElementById("extendido");
 	if (x.style.display === "none") {

@@ -24,7 +24,7 @@ body {
   display: inline-block
 }
 .carta{
-  width: 400px;
+  width: 450px;
   
 }
 button{
@@ -35,9 +35,14 @@ button{
 }
 #extendido {
 
-  width: 400px;
+  width: 450px;
   padding: 50px 0;
   text-align: center;
   background-color: lightblue;
   margin-top: 20px;
+}
+/*En tu hoja de estilos */
+a:link, a:visited, a:active {
+  text-decoration:none;
+  color: black;
 }
