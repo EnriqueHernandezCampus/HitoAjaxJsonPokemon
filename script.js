@@ -18,7 +18,7 @@ function procesarRespuesta() {
 	}
 }
 function randomPokemon() {
-	let aleatorio = Math.floor(Math.random() * (650 - 1) + 1);
+	let aleatorio = Math.floor(Math.random() * (898 - 1) + 1);
 	console.log("aleatorio " + aleatorio)
 	ajax.open("GET", "https://pokeapi.co/api/v2/pokemon/" + aleatorio);
 	ajax.send();
@@ -35,6 +35,7 @@ function loadLista() {
 	ajax.send();
 
 }
+
 function mostrarLista() {
 
 	let stats = "";
@@ -42,9 +43,10 @@ function mostrarLista() {
 	let types = "type: ";
 	let abilidades = "<p>Abilities:</p><p>";
 	let obj = JSON.parse(textJson);
+	
 
-	console.log(obj.sprites.other.dream_world);
-	if (document.getElementById("pokemon").value < 650) {
+	console.log(obj.id)
+	if (obj.id < 650) { // comprobar que tiene imagen bonita si no pone el sprite
 
 		salida = "<img height='100%' src=" + obj.sprites.other.dream_world.front_default + ">";
 	} else {
@@ -84,20 +86,26 @@ function mostrarLista() {
 
 
 }
-function funcionPrueba() {
-
-	/*obj.types.forEach(element => {
-		botones+="<button>"+element.type.name+"</button>"
-		console.log(element.type.url);
+// function funcionPrueba() {
+// 	console.log("toggle details");
+// 	var x = document.getElementById("extendido");
+// 	if (x.style.display === "none") {
+// 		x.style.display = "inline-block";
+// 	} else {
+// 		x.style.display = "none";
+// 	}
+// 	// let textJson = ajax.responseText;
+// 	// let obj = JSON.parse(textJson);
+// 	// obj.types.forEach(element => {
+// 	// 	console.log(element.type.url);
 		
-	});*/
-	//ajax.open("GET", obj.types.);
-	//ajax.send();
-	console.log("toggle details");
-	var x = document.getElementById("extendido");
-	if (x.style.display === "none") {
-		x.style.display = "inline-block";
-	} else {
-		x.style.display = "none";
-	}
-}
+// 	// });
+// 	// console.log("funcion prueba"+ obj.name);
+
+// 	/*obj.types.forEach(element => {
+// 		botones+="<button>"+element.type.name+"</button>"
+// 		console.log(element.type.url);
+		
+// 	});*/
+	
+// }
