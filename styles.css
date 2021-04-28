@@ -7,6 +7,7 @@ body {
   }
   #foto{
    position: relative;
+   height: 300px;
   }
   h1 {
     font-size: 40px;

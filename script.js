@@ -17,6 +17,12 @@ function procesarRespuesta() {
 		}
 	}
 }
+function randomPokemon() {
+	let aleatorio = Math.floor(Math.random() * (650 - 1) + 1);
+	console.log("aleatorio " + aleatorio)
+	ajax.open("GET", "https://pokeapi.co/api/v2/pokemon/" + aleatorio);
+	ajax.send();
+}
 function peticionLista() {
 
 	ajax.open("GET", "https://pokeapi.co/api/v2/pokemon/" + document.getElementById("pokemon").value);
@@ -34,15 +40,15 @@ function mostrarLista() {
 	let stats = "";
 	let textJson = ajax.responseText;
 	let types = "type: ";
-	let abilidades = "<summary>Abilities</summary><p>";
+	let abilidades = "<p>Abilities:</p><p>";
 	let obj = JSON.parse(textJson);
 
 	console.log(obj.sprites.other.dream_world);
 	if (document.getElementById("pokemon").value < 650) {
 
-		salida = "<img width = '300px' src=" + obj.sprites.other.dream_world.front_default + ">";
-	}else{
-		salida = "<img width = '300px' src=" + obj.sprites.front_default + ">";
+		salida = "<img height='100%' src=" + obj.sprites.other.dream_world.front_default + ">";
+	} else {
+		salida = "<img  height='100%' src=" + obj.sprites.front_default + ">";
 	}
 	document.getElementById("foto").innerHTML = salida;
 	nombre = "<h4>" + obj.name.toUpperCase() + " " + obj.base_experience + "xp</h4>";

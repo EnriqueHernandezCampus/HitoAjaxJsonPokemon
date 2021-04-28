@@ -20,6 +20,7 @@
     <label for="pokemon">Escribe un número del 1 al 898</label>
     <input type="number" min="1" max="898" id="pokemon">
     <button onclick="peticionLista()">Te elijo a tí!</button>
+    <button onclick="randomPokemon()">Pokemon Random</button>
   </div>
   <h1 id="salida"></h1>
 
@@ -31,15 +32,15 @@
         <div id="nombre"></div>
         <div id="types"></div>
         <div id="stats" class="card-text"></div>
-        <details id="abilities">
-        </details>
+        <div id="abilities">
+        </div>
        <!--<div id ="buttons"></div>--> 
         <button onclick="funcionPrueba()">Details</button>
       </div>
     </div>
     <div id="foto" class="contenido"></div>
     <div id="extendido" style="display: none;">
-      <p>Aqui va a ir a que tipos es débil y a que tipos es fuerte.Va a estar complicado</p>
+      <p>Aqui va a ir a que tipos es débil y a qué tipos es fuerte.Va a estar complicado</p>
     </div>
   </div>
 </body>
