@@ -34,7 +34,7 @@ function mostrarPokemon() {
 
 	let stats = "";
 	let textJson = ajax.responseText;
-	let types = "type: ";
+	let types = "Type: ";
 	let abilidades = "<p>Abilities:</p><p>";
 	let pokemon = JSON.parse(textJson);
 	
@@ -56,7 +56,7 @@ function mostrarPokemon() {
 	});
 	pokemon.types.forEach(element => {
 		
-		types += "<p>" + element.type.name + " </p> ";
+		types += "<p>-" + element.type.name + " </p> ";
 	});
 	pokemon.abilities.forEach(element => {
 		console.log(element.ability.name)
